@@ -1,0 +1,88 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Pytest
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Data files
+*.csv
+*.xlsx
+*.xls
+*.parquet
+*.feather
+*.h5
+*.db
+*.sqlite3
+
+# Plots and images
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.pdf
+
+# Logs
+*.log
+
+# VSCode
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Output files
+clustered_customers.csv
+customers_with_clusters.csv
+cluster_profiles.csv
+cluster_scatterplot.png
+promotion_distribution.png
+customer_ids_by_cluster.csv
+customer_segments_plot.png
+
+# Static files
+/static/

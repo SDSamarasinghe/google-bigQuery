@@ -1,0 +1,92 @@
+Customer Segmentation and Promotion Assignment (KMeans Clustering)
+==================================================================
+
+1. Data Loading and Preprocessing
+---------------------------------
+- Loaded customer data from 'sample_customer_data.csv'.
+- Encoded categorical columns ('FavDish', 'TimePref', 'Location') using LabelEncoder to convert them into numeric values suitable for clustering.
+- Selected relevant features for clustering: TotalSpend, Frequency, AOV, and the encoded categorical columns.
+
+2. Feature Scaling
+------------------
+- Applied StandardScaler to normalize all features, ensuring each feature contributes equally to the clustering process.
+
+3. KMeans Clustering
+--------------------
+- Used KMeans algorithm with 4 clusters (n_clusters=4, random_state=42) to segment customers based on their spending, visit frequency, average order value, and preferences.
+- Assigned each customer to a cluster.
+
+4. Cluster Profiling
+--------------------
+- Aggregated and analyzed each cluster to determine average spend, frequency, AOV, and most common preferences.
+- Used these profiles to understand the characteristics of each customer segment.
+
+**Cluster Feature and Behavior Summary**
+----------------------------------------
+- The following describes the typical features and behaviors for each cluster (based on the cluster_profiles.csv output):
+
+Cluster 0:
+- **Features:** Moderate to high TotalSpend, moderate Frequency, moderate AOV.
+- **Behaviors:** These customers are steady spenders, often prefer a specific dish and location, and visit regularly but not excessively. They respond well to loyalty programs and "come back soon" offers.
+
+Cluster 1:
+- **Features:** Lower TotalSpend, higher Frequency, low AOV.
+- **Behaviors:** These are frequent visitors who spend less per visit. They are likely regulars who enjoy deals and combos. Upselling combo deals or value meals is effective for this group.
+
+Cluster 2:
+- **Features:** High TotalSpend, low to moderate Frequency, high AOV.
+- **Behaviors:** These customers make fewer visits but spend a lot when they do, often at lunch. They are ideal for lunch-time discount bundles or special occasion offers.
+
+Cluster 3:
+- **Features:** Low TotalSpend, low Frequency, low AOV.
+- **Behaviors:** These are infrequent, low-spending customers who may be at risk of churning. Reactivation coupons or limited-time offers can help bring them back.
+
+5. Promotion Assignment
+-----------------------
+- Mapped each cluster to a specific promotion strategy based on its profile:
+    0: Loyalty Points + 'Come Back Soon' Offer
+    1: Upsell Combo Deals for Regulars
+    2: Lunch-Time Discount Bundle
+    3: Reactivation Coupon - Limited Time Offer
+
+6. Visualization
+----------------
+- Created scatter plots to visualize customer segments and promotion assignments.
+- Saved results and plots for further analysis.
+
+---
+
+Seasonal Trend Identification (ARIMA Forecasting)
+=================================================
+
+1. Data Loading and Preparation
+-------------------------------
+- Loaded order data from 'sample_orders.csv'.
+- Converted the 'Date' column to datetime format for time series analysis.
+
+2. Filtering and Aggregation
+----------------------------
+- Filtered data for a specific dish (e.g., 'Pasta').
+- Aggregated daily order quantities to create a time series for the selected dish.
+
+3. ARIMA Model Fitting
+----------------------
+- Used the ARIMA model (order=(2,1,2)) to fit the time series data.
+- The ARIMA model captures trends, seasonality, and noise in the data.
+
+4. Forecasting
+--------------
+- Forecasted the next 14 days of order quantities for the selected dish.
+- Generated future dates and predicted values.
+
+5. Visualization and Seasonal Trend Analysis
+--------------------------------------------
+- Plotted observed vs. forecasted order counts to visualize trends and seasonality.
+- The ARIMA forecast helps identify recurring patterns, peaks, and troughs in demand, which are indicative of seasonal trends.
+
+---
+
+Summary
+=======
+- KMeans clustering segments customers for targeted promotions based on behavioral and preference data.
+- ARIMA forecasting identifies and predicts seasonal trends in dish orders, enabling data-driven inventory and marketing decisions.
